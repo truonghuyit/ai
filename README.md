@@ -3,7 +3,8 @@
 **Phát hiện món ăn và tính giá tiền tự động bằng YOLOv11 + Flask**
 
 ---
-![image](https://github.com/user-attachments/assets/eae66b3a-3040-4e89-8dda-655ee23a1149)
+![image](https://github.com/user-attachments/assets/b8291156-827a-4106-9b07-7381bab2d17e)
+
 
 ## 🧠 Giới thiệu  
 Hệ thống sử dụng **YOLOv11** để phát hiện các món ăn từ ảnh chụp khay cơm và **CNN** để phân loại từng món. Kết quả sẽ được hiển thị trên giao diện **web Flask**, bao gồm:
