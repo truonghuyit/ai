@@ -31,11 +31,11 @@ Hệ thống sử dụng:
 ```bash
 git clone https://github.com/truonghuyit/ai.git
 cd ai
-python -m venv yolo
+python -m venv 3ITech
 # Windows:
-yolo\Scripts\activate
+3ITech\Scripts\activate
 # macOS/Linux:
-source yolo/bin/activate
+source 3ITech/bin/activate
 pip install flask ultralytics tensorflow opencv-python pillow
 ```
 
