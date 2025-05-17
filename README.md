@@ -69,7 +69,7 @@ project/
 │
 ├── app.py                   # Flask server
 ├── YOLOv11n.pt              # YOLOv11 model phát hiện món ăn
-├── best_food_model.tflite   # TFLite model phân loại món ăn
+├── cnn.h5   # TFLite model phân loại món ăn
 ├── price_map.json           # Tên món ăn và giá tiền
 │
 ├── static/
@@ -93,7 +93,8 @@ project/
   "Thit kho": 18000
 }
 ```
-Hoặc mở [http://127.0.0.1:5000/edit](http://127.0.0.1:5000/edit) để chỉnh giá qua giao diện web.
+Hoặc mở [http://127.0.0.1:5000/edit_prices](http://127.0.0.1:5000/edit_prices) để chỉnh giá qua giao diện web.
+![image](https://github.com/user-attachments/assets/354b10b9-0f3b-4a36-8053-75d97086de19)
 
 ### 📈 Mở rộng thêm món ăn
 - Cập nhật `class_names` trong mã nguồn CNN (nếu dùng).
@@ -103,7 +104,8 @@ Hoặc mở [http://127.0.0.1:5000/edit](http://127.0.0.1:5000/edit) để chỉ
 
 ## 📸 Demo
 > Tải ảnh khay cơm → Hệ thống tự phát hiện & phân loại từng món → In kết quả tên, giá & tổng tiền.
-![image](https://github.com/user-attachments/assets/a831b0d4-3de6-4580-b728-ac93040d8ace)
-![image](https://github.com/user-attachments/assets/06dc2c8b-7b14-4c7b-9af8-fd501f8d2368)
+![image](https://github.com/user-attachments/assets/2640bb20-eaa7-4887-a223-d24ad046b8b3)
+
+![image](https://github.com/user-attachments/assets/4eae556d-4ce0-4c48-8487-e9c0ea679fc1)
 
 ---
