@@ -1,59 +1,108 @@
- Food Recognition & Pricing System with YOLO + Flask
-Hệ thống này sử dụng mô hình YOLO để phát hiện món ăn từ ảnh chụp khay cơm và Flask để xây dựng giao diện web hiển thị kết quả, tên món, giá tiền và tổng hóa đơn.
 
-🔧 Yêu cầu hệ thống
-Python 3.10+
+# 🍱 NHẬN DIỆN MÓN - THANH TOÁN TỨC THÌ
+**Phát hiện món ăn và tính giá tiền tự động bằng YOLOv11 + Flask**
 
-pip (Python package installer)
+---
+![image](https://github.com/user-attachments/assets/eae66b3a-3040-4e89-8dda-655ee23a1149)
 
-Git (nếu clone từ GitHub)
+## 🧠 Giới thiệu  
+Hệ thống sử dụng **YOLOv11** để phát hiện các món ăn từ ảnh chụp khay cơm và **CNN** để phân loại từng món. Kết quả sẽ được hiển thị trên giao diện **web Flask**, bao gồm:
 
-⚙️ Cài đặt
-1. Tạo môi trường ảo (virtual environment)
-bash
-Sao chép
-Chỉnh sửa
+- Tên từng món ăn  
+- Giá tiền theo menu  
+- Tổng hóa đơn  
+✔️ Giao diện đơn giản, dễ sử dụng  
+✔️ Hỗ trợ chỉnh sửa giá món ăn qua file `price_map.json`  
+✔️ Có trang web để **chỉnh sửa giá tiền trực tiếp**
+
+---
+
+## 🔧 Yêu cầu hệ thống
+- Python >= 3.10  
+- pip (Python package installer)  
+- Git (nếu cài đặt qua GitHub)
+
+---
+
+## ⚙️ Cài đặt
+
+### 1. Clone hoặc tải dự án
+```bash
+git clone https://github.com/truonghuyit/ai.git
+cd ai
+```
+
+### 2. Tạo môi trường ảo
+```bash
 python -m venv yolo
-2. Kích hoạt môi trường ảo
-Windows:
+```
 
-bash
-Sao chép
-Chỉnh sửa
+### 3. Kích hoạt môi trường ảo  
+**Windows:**
+```bash
 yolo\Scripts\activate
-Mac/Linux:
-
-bash
-Sao chép
-Chỉnh sửa
+```
+**macOS/Linux:**
+```bash
 source yolo/bin/activate
-3. Cài đặt các thư viện cần thiết
-bash
-Sao chép
-Chỉnh sửa
-pip install flask
-pip install ultralytics
-❗ Lưu ý: Bạn có thể thêm các thư viện khác như opencv-python, tensorflow, Pillow, v.v... tùy vào cấu trúc dự án.
+```
 
-🚀 Chạy ứng dụng Flask
-bash
-Sao chép
-Chỉnh sửa
+### 4. Cài đặt thư viện cần thiết
+```bash
+pip install flask ultralytics tensorflow opencv-python pillow
+```
+
+---
+
+## 🚀 Chạy ứng dụng Flask
+```bash
 python app.py
-Ứng dụng sẽ khởi động tại http://127.0.0.1:5000 hoặc địa chỉ bạn cấu hình trong app.py.
+```
+Ứng dụng sẽ chạy tại: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-📂 Cấu trúc thư mục mẫu
-php
-Sao chép
-Chỉnh sửa
+---
+
+## 📂 Cấu trúc thư mục mẫu
+```
 project/
 │
-├── app.py                 # Flask server
-├── yolov8_model.pt        # Trained YOLO model
-├── best_food_model.tflite # (Tùy chọn) Model phân loại món ăn
+├── app.py                   # Flask server
+├── YOLOv11n.pt              # YOLOv11 model phát hiện món ăn
+├── best_food_model.tflite   # TFLite model phân loại món ăn
+├── price_map.json           # Tên món ăn và giá tiền
+│
 ├── static/
-│   └── cropped/           # Ảnh sau khi crop từ YOLO
+│   └── cropped/             # Ảnh sau khi YOLO cắt
+│
 ├── templates/
-│   └── index.html         # Giao diện HTML Flask
-├── menu.json              # Danh sách món và giá
-└── README.md
+│   ├── index.html           # Giao diện chính
+│   └── history.html      # Giao diện chỉnh sửa giá
+```
+
+---
+
+## 🛠️ Tùy chỉnh & Mở rộng
+
+### 📝 Thay đổi tên món và giá
+- Mở file `price_map.json` và chỉnh sửa theo cấu trúc:
+```json
+{
+  "Ga chien": 20000,
+  "Com trang": 5000,
+  "Thit kho": 18000
+}
+```
+Hoặc mở [http://127.0.0.1:5000/edit](http://127.0.0.1:5000/edit) để chỉnh giá qua giao diện web.
+
+### 📈 Mở rộng thêm món ăn
+- Cập nhật `class_names` trong mã nguồn CNN (nếu dùng).
+- Đảm bảo nhãn món ăn khớp với các tên trong `price_map.json`.
+
+---
+
+## 📸 Demo
+> Tải ảnh khay cơm → Hệ thống tự phát hiện & phân loại từng món → In kết quả tên, giá & tổng tiền.
+![image](https://github.com/user-attachments/assets/a831b0d4-3de6-4580-b728-ac93040d8ace)
+![image](https://github.com/user-attachments/assets/06dc2c8b-7b14-4c7b-9af8-fd501f8d2368)
+
+---
