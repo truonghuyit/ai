@@ -30,6 +30,7 @@ Hệ thống sử dụng:
 
 ```bash
 git clone https://github.com/truonghuyit/ai.git
+downloads https://drive.google.com/file/d/1J7_3laGGGMMy6m-DpodcG9Wjg20BVNgT/view?usp=sharing
 cd ai
 python -m venv 3ITech
 # Windows:
